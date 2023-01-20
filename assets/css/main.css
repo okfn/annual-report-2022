@@ -109,6 +109,10 @@ h1, h2{
     font-family: 'Miriam Libre', serif; 
 }
 
+h1 {
+  line-height: 1.25em;
+}
+
 #title-divider {
     margin: 45px 0px 25px;
     border: 2px solid black;

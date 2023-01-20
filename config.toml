@@ -1,3 +1,3 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://2022.okfn.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Open Knowledge 2022 Annual Report'

@@ -1,0 +1,447 @@
+{{ define "title" }}
+<title>OKFN Network - Global Directory</title>
+<meta name="description" content="The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.">
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="{{ .Params.og_url }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ .Params.og_title }}">
+<meta property="og:description" content="{{ .Params.og_description }}">
+<meta property="og:image" content="{{ .Params.og_image }}">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="network.okfn.org">
+<meta property="twitter:url" content="{{ .Params.og_url }}">
+<meta name="twitter:title" content="{{ .Params.og_title }}">
+<meta name="twitter:description" content="{{ .Params.og_description }}">
+<meta name="twitter:image" content="{{ .Params.og_image }}">
+
+{{ end }}
+
+{{ define "main" }}
+<div class=" mt-[50px] w-full z-[200]">
+<div id="specialist-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
+</div>
+</div>
+
+<div class="w-full text-center">
+    <div class="w-full pt-5">
+      <div class="grid md:grid-cols-2 md:mx-10 mx-5 grid-cols-2 mb-10">
+        <div class="md:col-span-1 col-span-1">
+          <a href="https://okfn.org/"><img src="{{ .Site.BaseURL }}images/okfn-net-logo.png" class="logo"></a>
+        </div>
+        <div class="font-bold md:col-span-1 md:pr-10 col-span-1">
+            <a class="ml-10 flex float-right" href="https://okfn.org/network">
+              <img class="self-center md:mr-2 md:float-left float-right max-h-6" src="{{ .Site.BaseURL }}images/chevron-left.png">
+              <span class="self-center">
+              Back to Open Knowledge Network
+              </span>
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="md:grid md:grid-cols-5 page-content auto-rows-max">
+      {{ $experts := getCSV "," "okfn-network-experts.csv" }}
+      {{ partial "specialists-header.html" . }}
+      {{ partial "specialists-filters.html" (dict "experts" $experts "ctx" .) }}
+      <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10">
+        <div class="specialists-grid md:grid md:grid-cols-3">
+          {{ range $.Site.Data.project }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <div class="{{ .Params.type }}-banner h-auto py-24 px-10  bg-specialist">
+      {{ partial "specialists-list-footer.html" . }}
+    </div>
+    <div class="h-auto py-24 mb-10 px-10">
+      {{ partial "learn-more.html" . }}
+    </div>
+</div>
+{{ end }}
+
+
+{{ define "scripts" }}
+
+<script type="text/javascript">
+
+  let filters = {
+      country: [],
+      category: [],
+      language: []
+  }
+
+  let currentOpenFilter = ''
+  let lastScroll = 0
+
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  var specialistInfo = document.getElementById("specialist-info")
+  var specialists = [
+          {{ $specialists := getCSV "," "okfn-network-experts.csv" }}
+          {{ range $pi, $specialist := after 1 $specialists }}
+           {
+             "name": {{ index . 1 }},
+             "description": {{ index . 6 }},
+             "email": {{ index . 2 }},
+             "twitter": {{ index . 12 }},
+             "website": {{ index . 13 }},
+             "github": {{ index . 14 }},
+             "gitlab": {{ index . 15 }},
+             "linkedin": {{ index . 16 }},
+             "category": {{ index . 5 }},
+             "country": {{ index . 0 }},
+             "language": {{ index . 4 }},  
+             "pic": {{ index . 8 }},
+             "pic_original": {{ index . 8 }},
+             "organization": {{ index . 3 }},
+             "pic_blend": {{ index . 9 }},
+             "url": {{ index . 10 }},
+             "background_position": {{ index . 11 }}
+             },
+          {{ end }}
+   ]
+
+  specialists = shuffleArray(specialists)
+  for (var i in specialists) {
+    specialists[i]['specialist_number'] = i
+    if (specialists[i]['pic_blend'] === 'FALSE') {
+      specialists[i]['pic_blend'] = 'bg-blend-screen'
+    } else {
+      specialists[i]['pic_blend'] = 'bg-blend-normal'
+    }
+
+    // Remove picture extension
+    specialists[i]['pic'] = specialists[i]['pic'].split('.')[0] + '-small.jpg'
+
+  }
+
+  const specialistCardTemplate = (specialist) => `
+          <div class="md:col-span-1 specialist-card mx-5 pb-10 mb-10 overflow-hidden h-[92%] rhover:cursor-pointer text-ellipsis" onclick="openSpecialist(${specialist.specialist_number})">
+ <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}'); background-position-y: ${(specialist.background_position)?specialist.background_position +"%":"50%"}"> 
+              <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
+            </div>
+            <div id="specialist-name" class="font-bold font-miriam px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
+              ${specialist.name}
+            </div>
+            <div class="px-10 pt-2 overflow-hidden text-ellipsis">
+              ${specialist.organization}
+            </div>
+          </div>
+  `
+
+  const specialistInfoTemplate = (specialist) => `
+    <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
+      <div class="grid md:grid-cols-3">
+        <div class="md:col-span-1 pr-10 relative">
+          <img src="{{ .Site.BaseURL }}images/directory/${specialist.pic}">
+          <img class="absolute right-0 top-0 md:hidden" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
+          <div class="mt-10 text-2xl text-left font-bold">
+            ${specialist.name}
+          </div>
+          <div class="text-left mt-5">
+            <img class="float-left" src={{ .Site.BaseURL }}images/pin-angle-fill.png>
+            <div class="mt-10 ml-10 text-sm text-left">
+            ${ specialist.country }
+            </div>
+          </div>
+          <div class="my-10">
+            <hr class="border border-black opacity-100"></hr>
+          </div>
+          <div class="text-left mt-5 grid grid-cols-10">
+            <div class="place-items-center grid h-full">
+              <img  src="{{ .Site.BaseURL }}images/mail-icon.svg">
+            </div>
+            <div class="grid h-full col-span-9">
+              <a class="overflow-hidden h-full pl-2 inline text-[#00D1FF] text-ellipsis max-w-[90%]" target="_blank" href="mailto:${ specialist.email }">${ specialist.email }</a>
+            </div>
+          </div>
+          ${get_info(specialist['website'], specialist['website'], 'globe.png')}
+          ${get_info(specialist['github'], 'https://github.com/' + specialist['github'], 'icons8-github.svg')}
+          ${get_info(specialist['gitlab'], 'https://gitlab.com/' + specialist['gitlab'], 'icons8-gitlab.svg')}
+          ${get_info(specialist['linkedin'], 'https://linkedin.com/in/' + specialist['linkedin'], 'icons8-linkedin-circled.svg')}
+          ${get_info(specialist['twitter'], 'https://twitter.com/' + specialist['twitter'], 'icons8-twitter.svg')}
+        </div>
+        <div class="md:col-span-2 mt-10 md:mt-0">
+        <div class="text-2xl text-left mb-10">
+          <mark class="specialist">
+          Bio
+          </mark>
+          <img class="float-right md:block hidden" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
+        </div>
+        <div class="text-left">
+        ${specialist.description}
+        </div>
+        <div class="mt-10">
+          ${getLanguages(specialist.language)}
+        </div>
+        <div class="mt-5">
+          ${getCategories(specialist.category)}
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+    `
+
+  function get_info(field, link, icon) {
+    if (!field) 
+        return ''
+
+    return `<div class="text-left mt-5 grid grid-cols-10">
+            <div class="place-items-center grid h-full">
+              <img  src="{{ .Site.BaseURL }}images/${icon}">
+            </div>
+            <div class="grid h-full col-span-9">
+               <a class="overflow-hidden h-full pl-2 inline text-[#00D1FF] text-ellipsis max-w-[90%]" href="${link}" target="_blank">${link}</a>
+            </div>
+          </div>
+    `
+  }
+  
+  function getCategories(categories) {
+    let categoriesList = categories.split(',')
+    let categoriesDiv = (l) => `
+    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5 mb-2">
+      ${l}
+    </button>
+    `
+    return categoriesList.reduce((langHtml, l) => {
+      return langHtml + categoriesDiv(l, '')
+    }, '')
+  }
+
+  function getLanguages(languages) {
+    let languageList = languages.split(',')
+    let languageDiv = (l) => `
+    <button class="rounded rounded-full border-black border-2 px-5 mb-2">
+      ${l}
+    </button>
+    `
+    return languageList.reduce((langHtml, l) => {
+      return langHtml + languageDiv(l, '')
+    }, '')
+  }
+
+  function closeDialog() {
+    document.getElementById('info-dialog').classList.remove('show-dialog')
+    specialistInfo.style.visibility = "hidden"  
+    let stateObj = {
+      'Title': 'OKFN Global Directory',
+      'Url': '/specialist/'
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
+
+  }
+
+  function openSpecialist(specialistNumber) {
+    specialistInfo.style.visibility = "visible"  
+    specialistInfo.innerHTML = specialistInfoTemplate(specialists[specialistNumber])
+    let stateObj = {
+      'Title': 'OKFN Global Directory - ' + specialists[specialistNumber]['name'],
+      'Url': '/specialist/' + specialists[specialistNumber]['url']
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    lastScroll = window.scrollY
+    document.getElementById('specialist-info').scrollIntoView()
+    document.getElementById('info-dialog').classList.add('show-dialog')
+  }
+
+  function displaySpecialists(specialists) {
+    let specialistsGrid = document.getElementsByClassName('specialists-grid')[0]
+    specialistsGrid.innerHTML = ''
+    for (var pi in specialists) {
+      let specialistDiv = document.createElement('div')
+      specialistDiv.innerHTML = (specialistCardTemplate)(specialists[pi])
+      specialistsGrid.appendChild(specialistDiv)
+    }
+
+    /* Add number os displayed elements */
+
+    let resultsNumber = document.getElementById('results')
+    results.innerText = `${specialists.length} specialists matching your filters`
+  }
+
+  function addCheckbox(element, name, value, label) {
+    let checkbox = `<label class="checkbox-label specialist-checkbox-label text-sm block w-full"><input class="filter-item specialist-checkmark" type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
+    let checkboxDom = document.createElement('div')
+    checkboxDom.innerHTML = checkbox
+    element.appendChild(checkboxDom)
+  }
+
+  let countries = []
+  let categories = []
+  let languages = []
+
+  function getFilterChoices(filterChoices, filterName, projects) {
+    for (var p of projects) {
+      for (var r of p[filterName].split(',')) {
+          r = r.trim()
+          if (r !== '' && filterChoices.indexOf(r) < 0) {
+          filterChoices.push(r)
+        }
+      }
+    }
+    filterChoices.sort()
+  } 
+
+  getFilterChoices(countries, 'country', specialists)
+  getFilterChoices(languages, 'language', specialists)
+  getFilterChoices(categories, 'category', specialists)
+
+  let countrySelector = document.getElementsByClassName('country-selector')[0]
+  for (var r of countries) {
+    addCheckbox(countrySelector, 'country', r, r)
+  }
+
+  let categorySelector = document.getElementsByClassName('category-selector')[0]
+  for (var r of categories) {
+    addCheckbox(categorySelector, 'category', r, r)
+  }
+
+  let languageSelector = document.getElementsByClassName('language-selector')[0]
+  for (var r of languages) {
+    addCheckbox(languageSelector, 'language', r, r)
+  }
+
+
+  function filterSpecialists(specialists) {
+    let filteredSpecialists = []
+    let filterNames = Object.keys(filters)
+
+    for (var p of specialists) {
+      let m = 1
+      for (var filterName of filterNames) {
+        if (filters[filterName].length > 0) {
+          for (var f of filters[filterName]) { 
+            if (p[filterName].indexOf(f) >= 0) {
+              m = 1
+              break
+            } else {
+              m = 0
+            }
+          }
+          if (m == 0)
+            break
+        } 
+      }
+      if (m > 0)
+          filteredSpecialists.push(p)
+    }
+
+    return filteredSpecialists
+  }
+
+  function clickCheckbox(element, filterName) {
+      let filterButtonSpan = document.querySelector(`#${filterName}-filter > button > span`) 
+      let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+
+      if (element.checked) {
+        filters[filterName].push(element.value)
+        filterButtonSpan.innerText = ' ' +filters[filterName].join(', ')
+      } else {
+        let fIndex = filters[filterName].findIndex((f) => f === element.value)  
+        filters[filterName].splice(fIndex, 1)
+        filterButtonSpan.innerText = ' ' + filters[filterName].join(', ')
+      }
+
+      if (filters[filterName].length == 0) {
+        filterButton.classList.remove('open')
+      } else {
+        filterButton.classList.add('open')
+      }
+      displaySpecialists(filterSpecialists(specialists))
+  }
+
+  // Configure Category
+
+  for(let c of document.getElementsByName('category')) {
+    c.onchange = () => { clickCheckbox(c, 'category') }
+  }
+
+  // Configure Region
+
+  for(let c of document.getElementsByName('country')) {
+    c.onchange = () => { clickCheckbox(c, 'country') }
+  }
+
+  // Configure Language
+
+  for(let c of document.getElementsByName('language')) {
+    c.onchange = () => { clickCheckbox(c, 'language') }
+  }
+
+  function configureFilterButton(filterName) {
+    let filterNames = Object.keys(filters)
+    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+    let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
+
+    filterButton.onclick = () => {
+      if (!filterSelector.classList.contains('visible')) {
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
+        currentOpenFilter = filterName
+      } else {
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
+        currentOpenFilter = ''
+      }
+
+      for (var f of filterNames) {
+          if (f !== filterName) {
+            let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+            filterSelector.classList.remove('visible')
+            filterSelector.classList.add('collapse')
+          }
+      }
+    }
+  }
+
+  configureFilterButton('country')
+  configureFilterButton('category')
+  configureFilterButton('language')
+
+  displaySpecialists(specialists)
+
+  let locationPath = window.location.pathname.split('/')
+
+  if (locationPath.length > 2) {
+    let specialistURL = locationPath[2]
+    let specialistIndex = specialists.findIndex((s) => s.url == specialistURL)
+    if (specialistIndex >= 0) 
+      openSpecialist(specialistIndex)
+  }
+
+  window.onclick = (evt) => {
+    let filterNames = Object.keys(filters)
+
+    if (evt) {
+      if (currentOpenFilter !== '' && 
+          !(evt.target.classList.contains('filter-button') ||
+            evt.target.parentElement.classList.contains('filter-button') ||
+            evt.target.classList.contains('checkbox-label') ||
+            evt.target.classList.contains('filter-item') ||
+            evt.target.classList.contains('filter-selector'))) {
+            for (var f of filterNames) {
+              let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+              filterSelector.classList.remove('visible')
+              filterSelector.classList.add('collapse')
+              currentOpenFilter = ''
+            } 
+      }
+    }
+  }
+
+</script>
+
+{{ end }}

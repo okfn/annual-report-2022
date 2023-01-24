@@ -949,10 +949,6 @@ p {
 .m-auto {
   margin: auto;
 }
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -964,6 +960,10 @@ p {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 .mx-4 {
   margin-left: 1rem;
@@ -1065,8 +1065,8 @@ p {
 .max-w-\[300px\] {
   max-width: 300px;
 }
-.max-w-\[630px\] {
-  max-width: 630px;
+.max-w-\[95\%\] {
+  max-width: 95%;
 }
 .max-w-\[220px\] {
   max-width: 220px;
@@ -1076,6 +1076,9 @@ p {
 }
 .max-w-\[200px\] {
   max-width: 200px;
+}
+.max-w-\[560px\] {
+  max-width: 560px;
 }
 .max-w-\[500px\] {
   max-width: 500px;
@@ -1088,6 +1091,9 @@ p {
 }
 .max-w-\[307px\] {
   max-width: 307px;
+}
+.max-w-\[630px\] {
+  max-width: 630px;
 }
 .max-w-\[70\%\] {
   max-width: 70%;
@@ -1998,6 +2004,10 @@ button.project.open {
     width: 20%;
   }
 
+  .md\:max-w-\[640px\] {
+    max-width: 640px;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2012,11 +2022,6 @@ button.project.open {
 
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .md\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 
   .md\:pl-10 {

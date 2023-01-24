@@ -949,6 +949,10 @@ p {
 .m-auto {
   margin: auto;
 }
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -961,16 +965,15 @@ p {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .mt-12 {
   margin-top: 3rem;
@@ -983,9 +986,6 @@ p {
 }
 .mt-2 {
   margin-top: 0.5rem;
-}
-.mt-10 {
-  margin-top: 2.5rem;
 }
 .mt-\[50px\] {
   margin-top: 50px;
@@ -1110,14 +1110,14 @@ p {
 .auto-rows-max {
   grid-auto-rows: max-content;
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .grid-cols-10 {
   grid-template-columns: repeat(10, minmax(0, 1fr));
@@ -1242,10 +1242,6 @@ p {
 .p-6 {
   padding: 1.5rem;
 }
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1269,6 +1265,10 @@ p {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 .px-5 {
   padding-left: 1.25rem;
@@ -1888,6 +1888,10 @@ button.project.open {
   cursor: pointer;
 }
 
+.hover\:bg-blog-h:hover {
+  background-color: rgba(228, 255, 54, 1);
+}
+
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(238 238 238 / var(--tw-bg-opacity));
@@ -1962,16 +1966,16 @@ button.project.open {
     margin-right: 2.5rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:mr-2 {
     margin-right: 0.5rem;
   }
 
   .md\:mt-20 {
     margin-top: 5rem;
-  }
-
-  .md\:mt-0 {
-    margin-top: 0px;
   }
 
   .md\:block {
@@ -2008,6 +2012,11 @@ button.project.open {
 
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .md\:pl-10 {

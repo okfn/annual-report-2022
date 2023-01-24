@@ -21,6 +21,7 @@ module.exports = withMT({
         500: '#ff80db'
       },
       'blog': 'rgba(228, 255, 54, 0.25)',
+      'blog-h': 'rgba(228, 255, 54, 1)',
     },
     extend: {
       backgroundImage: {

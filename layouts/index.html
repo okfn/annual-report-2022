@@ -21,12 +21,12 @@
 <div class="bg-header-top bg-no-repeat bg-cover -z-10 absolute min-h-[1200px] top-0 left-0 right-0">
      &nbsp;
 </div>
-<div class="pt-20 min-h-[800] grid pb-20 px-10">
+<div class="pt-20 min-h-[800] grid pb-20 md:px-0 mx-10 grid-cols-1">
   <div class="flex justify-center">
     <img src="{{ .Site.BaseURL}}images/okfn-logo.png">
   </div>
   <div class="flex justify-center pt-20">
-   <img src="{{ .Site.BaseURL}}images/mission.png">
+   <img class="max-w-[300px]" src="{{ .Site.BaseURL}}images/mission.png">
   </div>
   <div class="flex justify-center pt-20 text-center">
   <h1>Annual Report</h1>
@@ -115,12 +115,12 @@ Barcelona at the beginning of May.
           
           <p class="pt-10">
 
-          <div class="grid gap-x-8 grid-cols-2">
+          <div class="grid gap-x-8 md:grid-cols-2 grid-cols-1">
             <div class="font-bold text-center">
                 <a target="_blank" href="https://network.okfn.org/specialist"><img class="mb-4 drop-shadow-xl rounded-[30px]" src="{{ .Site.BaseURL}}images/directory-thumb.png"></a>
                 The Global Directory currently counts 62 specialists, 19 more than when the project was launched.
             </div>
-            <divv class="font-bold text-center">
+            <div class="font-bold text-center md:mt-0 mt-10">
                 <a target="_blank" href="https://network.okfn.org/project"><img class="mb-4 drop-shadow-xl rounded-[30px]" src="{{ .Site.BaseURL}}images/repository-thumb.png"></a>
                 The Project Repository currently counts 54 projects, with 9 other requests for projects to be added.
             </div>

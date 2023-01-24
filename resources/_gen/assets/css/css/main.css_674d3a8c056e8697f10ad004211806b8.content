@@ -1062,6 +1062,9 @@ p {
 .w-full {
   width: 100%;
 }
+.max-w-\[300px\] {
+  max-width: 300px;
+}
 .max-w-\[630px\] {
   max-width: 630px;
 }
@@ -1085,9 +1088,6 @@ p {
 }
 .max-w-\[307px\] {
   max-width: 307px;
-}
-.max-w-\[300px\] {
-  max-width: 300px;
 }
 .max-w-\[70\%\] {
   max-width: 70%;

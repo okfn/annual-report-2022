@@ -1300,6 +1300,9 @@ p {
 .pt-4 {
   padding-top: 1rem;
 }
+.pt-\[200px\] {
+  padding-top: 200px;
+}
 .pl-10 {
   padding-left: 2.5rem;
 }

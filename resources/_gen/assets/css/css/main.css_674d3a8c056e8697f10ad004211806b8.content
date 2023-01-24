@@ -1077,9 +1077,6 @@ p {
 .max-w-\[200px\] {
   max-width: 200px;
 }
-.max-w-\[560px\] {
-  max-width: 560px;
-}
 .max-w-\[500px\] {
   max-width: 500px;
 }

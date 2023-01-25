@@ -928,9 +928,6 @@ p {
 .bottom-\[400px\] {
   bottom: 400px;
 }
-.bottom-0 {
-  bottom: 0px;
-}
 .-z-10 {
   z-index: -10;
 }
@@ -1962,6 +1959,11 @@ button.project.open {
 .hover\:bg-lightpink-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 128 219 / var(--tw-bg-opacity));
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-800:hover {

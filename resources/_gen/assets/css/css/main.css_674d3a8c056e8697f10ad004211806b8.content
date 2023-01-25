@@ -1080,8 +1080,8 @@ p {
 .min-w-\[900px\] {
   min-width: 900px;
 }
-.max-w-\[475px\] {
-  max-width: 475px;
+.max-w-\[500px\] {
+  max-width: 500px;
 }
 .max-w-\[300px\] {
   max-width: 300px;
@@ -1098,9 +1098,6 @@ p {
 .max-w-\[200px\] {
   max-width: 200px;
 }
-.max-w-\[500px\] {
-  max-width: 500px;
-}
 .max-w-\[505px\] {
   max-width: 505px;
 }
@@ -1109,6 +1106,9 @@ p {
 }
 .max-w-\[307px\] {
   max-width: 307px;
+}
+.max-w-\[475px\] {
+  max-width: 475px;
 }
 .max-w-\[70\%\] {
   max-width: 70%;
@@ -1475,6 +1475,14 @@ p {
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'necto_monoregular';
+    src: url('../fonts/nectomono-regular-webfont.woff2') format('woff2'),
+         url('../fonts/nectomono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -1554,7 +1562,7 @@ header{
     justify-content: center;
 }
 h1, h2{
-    font-family: 'Miriam Libre', serif; 
+    font-family: 'necto_monoregular', serif; 
 }
 h1 {
   line-height: 1.25em;
@@ -1572,7 +1580,7 @@ h1 {
 }
 label {
     color: black;
-    font-family: 'Miriam Libre', serif;
+    font-family: 'necto_monoregular', serif;
     font-size: 24px;
     font-weight: bold;
 }

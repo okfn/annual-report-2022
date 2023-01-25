@@ -18,6 +18,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'necto_monoregular';
+    src: url('../fonts/nectomono-regular-webfont.woff2') format('woff2'),
+         url('../fonts/nectomono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -110,7 +119,7 @@ header{
 }
 
 h1, h2{
-    font-family: 'Miriam Libre', serif; 
+    font-family: 'necto_monoregular', serif; 
 }
 
 h1 {
@@ -132,7 +141,7 @@ h1 {
 }
 label {
     color: black;
-    font-family: 'Miriam Libre', serif;
+    font-family: 'necto_monoregular', serif;
     font-size: 24px;
     font-weight: bold;
 }

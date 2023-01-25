@@ -21,14 +21,14 @@
 <div class="bg-header-top bg-no-repeat bg-cover -z-10 absolute min-h-[1200px] top-0 left-0 right-0">
      &nbsp;
 </div>
-<div class="pt-20 min-h-[800] grid pb-20 px-10">
+<div class="pt-20 min-h-[800] pb-20 px-8 grid grid-cols-1">
   <div class="flex justify-center">
     <img src="{{ .Site.BaseURL}}images/okfn-logo.png">
   </div>
   <div class="flex justify-center pt-20">
-   <img src="{{ .Site.BaseURL}}images/mission.png">
+   <img class="max-w-[300px]" src="{{ .Site.BaseURL}}images/mission.png">
   </div>
-  <div class="flex justify-center pt-20">
+  <div class="flex justify-center pt-20 text-center">
   <h1>Annual Report</h1>
   </div>
 
@@ -39,7 +39,7 @@
   </div>
 
   <div class="flex justify-center pt-[60px]">
-    <div class="max-w-[630px]">
+    <div class="md:max-w-[640px] max-w-[95%]">
       <div class="text-2xl">
       Last year was a change of course and a lot of work for us at the Open Knowledge
       Foundation. 
@@ -61,25 +61,29 @@
 
       <div class="flex justify-left pt-[60px]">
         <div class="border-2 border-black rounded-[12px] px-8 py-4">
-          A world from our leadership
+          A word from our leadership
         </div>
       </div>
       <div class="grid md:grid-cols-2 pt-10">
         <div>
-          <img class="drop-shadow-xl rounded-[38px] max-w-[220px]" src="{{ .Site.BaseURL}}images/Renata-300x300.jpg">
+          <a href="https://blog.okfn.org/2023/01/16/open-knowledge-as-an-essential-design-principle-for-a-free-sustainable-and-open-future/" target="_blank">
+            <img class="drop-shadow-xl rounded-[38px] max-w-[220px]" src="{{ .Site.BaseURL}}images/Renata-300x300.jpg">
+          </a>
         </div>
         <div>
           <div class="font-bold pt-4">
-          Open Knowledge as an essential design principle for a free, fair and sustainable future
+          <a class="text-2xl text-black font-bold" href="https://blog.okfn.org/2023/01/16/open-knowledge-as-an-essential-design-principle-for-a-free-sustainable-and-open-future/" target="_blank">
+               Open Knowledge as an essential design principle for a free, fair and sustainable future
+          </a>
           </div>
-          <div class="pt-4">
+          <div class="text-xl pt-4">
             Renata Ávila, CEO
           </div>
         </div>
       </div>
 
 
-      <div class="flex justify-center pt-[60px] text-center m-auto">
+      <div class="flex justify-center pt-[200px] text-center m-auto">
         <h2><b class="font-bold">Highlights from the</b> Network</h2>
       </div>
 
@@ -88,8 +92,8 @@
           <img class="drop-shadow-xl max-h-[388px] rounded-[30px]" src="{{ .Site.BaseURL}}images/bcn-meeting-low.jpg">
         </div>
 
-        <div class="w-full flex justify-center font-bold pt-10">
-          <div class="max-w-[400px]">
+        <div class="w-full flex justify-center font-bold pt-4">
+          <div class="max-w-[400px] text-center">
           Chapter representatives enjoying a sunny lunch break during the strategic meeting in Barcelona
           </div>
         </div>
@@ -111,13 +115,13 @@ Barcelona at the beginning of May.
           
           <p class="pt-10">
 
-          <div class="grid gap-x-8 grid-cols-2">
+          <div class="grid gap-x-8 md:grid-cols-2 grid-cols-1">
             <div class="font-bold text-center">
-                <img class="mb-4 drop-shadow-xl rounded-[30px]" src="{{ .Site.BaseURL}}images/directory-thumb.png">
+                <a target="_blank" href="https://network.okfn.org/specialist"><img class="mb-4 drop-shadow-xl rounded-[30px]" src="{{ .Site.BaseURL}}images/directory-thumb.png"></a>
                 The Global Directory currently counts 62 specialists, 19 more than when the project was launched.
             </div>
-            <divv class="font-bold text-center">
-                <img class="mb-4 drop-shadow-xl rounded-[30px]" src="{{ .Site.BaseURL}}images/repository-thumb.png">
+            <div class="font-bold text-center md:mt-0 mt-10">
+                <a target="_blank" href="https://network.okfn.org/project"><img class="mb-4 drop-shadow-xl rounded-[30px]" src="{{ .Site.BaseURL}}images/repository-thumb.png"></a>
                 The Project Repository currently counts 54 projects, with 9 other requests for projects to be added.
             </div>
           </div>
@@ -208,7 +212,7 @@ Barcelona at the beginning of May.
           </div>
 
 
-          <div class="flex justify-center pt-[60px]">
+          <div class="flex justify-center pt-[200px]">
             <h2><b class="font-bold">Highlights from our </b>Projects</h2>
           </div>
 
@@ -228,12 +232,12 @@ with enthusiasm for finding ways to work together on the many challenges we
 face today, starting with climate data so we gathered with climate researchers,
 activists, and organisations to brainstorm ways to collaborate and use the
 Frictionless Data tooling to make open climate data more usable, accessible,
-and impactful (read about it here). This work was well-received and there is a
+and impactful (read about it <a target="_blank" href="https://blog.okfn.org/2022/03/09/combining-data-skills-knowledge-and-networks-to-save-our-planet/">here</a>). This work was well-received and there is a
 lot of enthusiasm from potential collaborators and funders in this area.
           <p class="pt-10">
 
 
-Software We have released Frictionless Framework (v5), a data management
+Software We have released <a target="_blank" href="https://framework.frictionlessdata.io/">Frictionless Framework (v5)</a>, a data management
 framework for Python that provides functionality to describe, extract,
 validate, and transform tabular data. It’s a second public version of this
 software and it incorporated a great deal of functional and performance
@@ -241,13 +245,13 @@ improvements based on user feedback. It now also includes a CKAN, GitHub, and
 Zenodo integration. Those features were highly demanded in the community.
           <p class="pt-10">
 
-We have also released Frictionless Repository (v2), a data management service
+We have also released <a target="_blank" href="https://repository.frictionlessdata.io/">Frictionless Repository (v2)</a>, a data management service
 that brings continuous data validation to tabular data in your repository via
 Github Action. This service is based on Frictionless Framework and now supports
 all the new features of the framework.
           <p class="pt-10">
 
-We continued research on Livemark (v1), a data presentation framework for
+We continued research on <a target="_blank" href="https://livemark.frictionlessdata.io/">Livemark (v1)</a>, a data presentation framework for
 Python that generates static sites from extended Markdown with interactive
 charts, tables, scripts, and other features. In 2022 we didn’t have this work
 prioritised but we’re going to continue development in 2023 as this project is
@@ -255,7 +259,7 @@ very promising and we have already been able to migrate all our documentation
 portals to Livemark.
           <p class="pt-10">
 
-We started working on Frictionless Application (MVP), a data management
+We started working on <a target="_blank" href="https://application.frictionlessdata.io/">Frictionless Application (MVP)</a>, a data management
 application for Browser and Desktop that provides functionality to describe,
 extract, validate, and transform tabular data with a UI. This project is a
 logical continuation of the Frictionless Data project's standards and software
@@ -265,18 +269,18 @@ and programming languages. We’re targeting Q1 of 2023 for a first public
 release.
           <p class="pt-10">
 
-We were again focused on Frictionless Adoption work and we participated in the
+We were again focused on <a target="_blank" href="https://frictionlessdata.io/adoption/">Frictionless Adoption</a> work and we participated in the
 development of valuable CKAN extensions based on Frictionless Software:
 ckanext-validation, providing an ability to validate uploaded tabular
 resources, and ckanext-datapackager, providing an ability to export a dataset
 as a Frictionless Data Package.
           <p class="pt-10">
 
-We continued enriching Frictionless Team and contributors community. Since
+We continued enriching <a target="_blank" href="https://frictionlessdata.io/people/">Frictionless Team</a> and contributors community. Since
 April 2022, a new developer, Shashi Gharti, has joined the Frictionless Data
 core team. Shashi has worked on the GitHub and Zenodo integrations for the
 Frictionless Framework and has also presented her work at two community calls
-already (in August and in October). In November and December 2022, an OKFN’s
+already (in <a target="_blank" href="https://frictionlessdata.io/blog/2022/08/30/community-call-github-integration/">August</a> and in <a target="_blank" href="https://frictionlessdata.io/blog/2022/11/02/october-call/">October</a>). In November and December 2022, an OKFN’s
 intern Polina Ganina participated in the Frictionless Application work. During
 the year we received a great deal of contributions from our community – we want
 to say thanks again to everyone who participated in the work!
@@ -288,8 +292,8 @@ to say thanks again to everyone who participated in the work!
 The 3rd cohort of Frictionless Fellows, mentored by Lilly Winfree, officially
 ended their fellowship in July 2022. Melvin Adhiambo Ochieng, Guo-Qiang Zhang,
 Victoria Stanley, Kevin Kidambasi Ogola, Lindsay Gypin, Zarena Syrgak have been
-an amazing cohort. You can read about their experience in packaging data and in
-reproducing someone else’s research data (not such a frictionless experience as
+an amazing cohort. You can read about their experience in <a target="_blank" href="https://frictionlessdata.io/blog/2022/03/05/fellows-datapackage/">packaging data</a> and <a target="_blank" href="https://frictionlessdata.io/blog/2022/05/15/fellows-reproducing-datapackages/">in
+reproducing someone else’s research data</a> (not such a frictionless experience as
 some may think!).
 
           <p class="pt-10">
@@ -375,7 +379,7 @@ We have also published 4 new case-studies this year
           <p class="pt-10">
 
 As the Discord community chat was becoming less and less practical, at the
-beginning of the year we decided to move it to Slack (with a Matrix bridge for
+beginning of the year we decided to move it <a target="_blank" href="https://join.slack.com/t/frictionlessdata/shared_invite/zt-17kpbffnm-tRfDW_wJgOw8tJVLvZTrBg">to Slack</a> (with <a target="_blank" href="https://matrix.to/#/#frictionlessdata:matrix.okfn.org">a Matrix bridge</a> for
 those wishing to use an open source equivalent), which allows us to keep track
 of the conversations and open issues in a much clearer way. We observed that it
 also led to a clear increase in community interaction.
@@ -383,7 +387,9 @@ also led to a clear increase in community interaction.
           </div>
 
         <div class="font-bold w-full flex flex-col justify-center pt-10">
-          <img class="drop-shadow-xl max-h-[388px] rounded-[30px]" src="{{ .Site.BaseURL}}images/screenshot.png">
+          <div class="">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/KAkUGU1BSeo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
           <br/>
           <span class="pt-5 max-w-[500px] m-auto">
           The Frictionless Data community in one of the weekly Friday meetings - they are all available online
@@ -415,9 +421,9 @@ also led to a clear increase in community interaction.
             has partnered with Transparency International (TI) to support their
             chapters in building their data literacy and advise them on data
             project delivery. This time the support was provided in the context
-            of the SANCUS project which aims to advance democratic
+            of the <a target="_blank" href="https://www.transparency.org/en/projects/strengthening-accountability-networks-among-civil-society-sancus">SANCUS project</a> which aims to advance democratic
             accountability worldwide. As part of this project, we designed and
-            delivered a ‘Data Collection for Civic Projects’ training, aiming
+            delivered a <a target="_blank" href="https://school-of-data.github.io/okf-events-a/data-literacy/2022/10/data-collection-ti-01">‘Data Collection for Civic Projects’ training</a>, aiming
             to provide TI chapters with key knowledge and methods to tackle the
             various data collection tasks that civic projects inevitably face,
             whether on the field or as part of desk research.
@@ -442,7 +448,7 @@ also led to a clear increase in community interaction.
 
           </div>
 
-      <div class="flex justify-center pt-[60px] max-w-[505px] text-center m-auto">
+      <div class="flex justify-center pt-[200px] max-w-[505px] text-center m-auto">
         <h2> <b class="font-bold">Highlights from </b> Training
 and Data Literacy</h2>
       </div>
@@ -454,10 +460,10 @@ and Data Literacy</h2>
           </div>
 
           <div>
-          In 2022, OKF was involved in the development of the Digital
-          Transformation and AI Competency Framework for Civil Servants report
-          as part of a multi stakeholder group working with the UNESCO
-          Broadband Commission Working Group on AI Capacity Building. The
+          In 2022, OKF was involved in the development of the <a target="_blank" href="https://www.unesco.org/en/digital-competency-framework">Digital
+          Transformation and AI Competency Framework for Civil Servants report</a>
+          as part of a multi stakeholder group working with the <a target="_blank" href="https://broadbandcommission.org/ai-capacity-building/https://broadbandcommission.org/ai-capacity-building/">UNESCO
+          Broadband Commission Working Group on AI Capacity Building</a>. The
           commission conducted a series of consultations on the global level in
           order to assess the critical capacity needs for public sector digital
           transformation. Alongside CEO Renata Avila, both Carolina Matos,
@@ -493,10 +499,10 @@ and Data Literacy</h2>
           <div>
           After 3 years of activity, the CoAct project entered its final year.
           During this period OKF supported the three civic organisations
-          selected as part of the Gender Equality Open Calls in order for them
+          selected as part of the <a target="_blank" href="https://coactproject.eu/gender-equality/">Gender Equality Open Calls</a> in order for them
           to adapt the Citizen Social Science methods to their work. This
-          stream of work concluded with the publication of a white paper on
-          Citizen Science applied to Civic Organisation Projects which outlined
+          stream of work concluded with the publication of a <a target="_blank" href="https://zenodo.org/record/7253650">white paper on
+          Citizen Science applied to Civic Organisation Projects</a> which outlined
           the insights gained from the Open Calls as well as recommendations
           for decision-makers.
 
@@ -521,7 +527,7 @@ and Data Literacy</h2>
         <div class="font-bold w-full flex flex-col justify-center pt-10">
           <img class="drop-shadow-xl max-h-[388px] rounded-[30px]" src="{{ .Site.BaseURL}}images/coact.jpg">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             After three years together, we and all CoAct partners have released
             a white paper on Citizen Science applied to Civic Organisation
             Projects
@@ -539,8 +545,8 @@ and Data Literacy</h2>
             In 2022 OKF delivered 7 trainings for governments and civic
             organisations (such as the Red Cross or Medecins Sans Frontières)
             aimed at building their capacity in making use of geodata in their
-            operations. All of these trainings followed the open learning
-            content we published in 2021 and our 2-step training format,
+            operations. All of these trainings followed the <a target="_blank" href="https://school-of-data.github.io/open-geodata-curriculum/en">open learning
+            content we published in 2021</a> and our 2-step training format,
             combining 2 days of interactive learning sessions followed by 5
             weeks of mentoring.
 
@@ -554,13 +560,13 @@ and Data Literacy</h2>
 
 
           <div>
-            We partnered with EITI in the design and facilitation of an online
-            datathon which aimed to incentivise the reuse of EITI data to
+            We partnered with EITI in the design and facilitation of <a target="_blank" href="https://eiti.org/events/datathon-innovative-solutions-data-driven-energy-transition">an online
+            datathon</a> which aimed to incentivise the reuse of EITI data to
             prototype innovative solutions aimed at accelerating the energy
             transition. Over the course of 6 months we designed, launched,
             coordinated and communicated around the event, its open call and
-            its results. To ensure that this datathon avoided the pitfalls of
-            similar events, we designed a new scenario-based event format: it
+            <a target="_blank" href="https://eiti.org/news/eiti-announces-winner-energy-transition-datathon">its results</a>. To ensure that this datathon avoided the pitfalls of
+            similar events, we designed a new <a target="_blank" href="https://school-of-data.github.io/eitidatathon2022-guide/#about">scenario-based event format</a>: it
             ensure that participants contributed ideas that would be relevant
             to real problems faced by EITI stakeholders, increasing the chance
             of the final prototypes being turned into real products or
@@ -568,7 +574,7 @@ and Data Literacy</h2>
           </div>
 
 
-      <div class="flex justify-center pt-[60px]">
+      <div class="flex justify-center pt-[200px]">
         <h2> <b class="font-bold">Highlights from</b> Collaborations</h2>
       </div>
 
@@ -581,7 +587,7 @@ and Data Literacy</h2>
         <div class="font-bold w-full flex flex-col justify-center pt-10 pb-10">
           <img class="drop-shadow-xl max-h-[388px] rounded-[30px]" src="{{ .Site.BaseURL}}images/barcelona.jpg">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             From left to right: Arnau Monty, Pablo Aragón, Lilly Winfree, Renata Ávila, Tarmo Tokkainen and Amir Taaki
           </span>
         </div>
@@ -595,7 +601,7 @@ and Data Literacy</h2>
           rules to limit dominant digital platforms leading local alternatives
           to flourish. It is also a historical place, where many of the global
           initiatives to promote our global digital commons were launched, from
-          the oXcars to the City Data Commons.
+          the <a target="_blank" href="https://xnet-x.net/en/get-in-touch-for/the-oxcars/">oXcars</a> to the <a target="_blank" href="https://ajuntament.barcelona.cat/digital/en/digital-transformation/city-data-commons">City Data Commons</a>.
 
           <p class="pt-10">
 
@@ -631,14 +637,14 @@ and Data Literacy</h2>
         <div class="font-bold w-full flex flex-col justify-center pt-10 pb-10">
           <img class="drop-shadow-xl  rounded-[30px]" src="{{ .Site.BaseURL}}images/tanzania.jpg">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             ODD event in Tanzania
           </span>
         </div>
 
         <div>
           The twelfth <a href="https://opendataday.org/" target="_blank">Open Data Day</a> took place on Saturday, 5th March 2022 with
-          organisations across the world organising over 153 registered events
+          organisations across the world organising over <a target="_blank" href="https://opendataday.org/events/2022/">153 registered events</a>
           to celebrate, promote and spread the use of open data. Rather than
           focusing on one particular day, OKF extended the period for the
           execution of the grants beyond March and partnered with funders to
@@ -653,7 +659,7 @@ and Data Literacy</h2>
           Bolivia, Botswana, Nigeria, Ecuador, Burkina Faso, Liberia, Tanzania,
           Brasil, Sweden, Argentina, Indonesia, and India were supported to
           host events and activities. The detailed list of organisations that
-          receive small grants is here.
+          receive small grants is <a target="_blank" href="https://blog.okfn.org/2022/06/06/announcing-the-winners-of-the-open-data-day-2022-small-grants/">here</a>.
 
           <p class="pt-10">
 
@@ -661,18 +667,18 @@ and Data Literacy</h2>
           The small grants program was supported by Microsoft and Builder
           Bridge. OKF also made the contribution to cover the coordination and
           rethinking work of the project. The blog posts with detailed reports
-          of the events from the organisers are available on the OKF blog and
-          the full report of the project can be accessed here.
+          of the events from the organisers are available on the <a target="_blank" href="https://blog.okfn.org/category/open-data-day-2022/">OKF blog</a> and
+          the full report of the project can be accessed <a target="_blank" href="https://docs.google.com/document/d/1OSvWII8tk9dwizZY9t4PtKiAlwaeWy7t_xq1zsRbkuU/edit?usp=sharing">here</a>.
 
           <p class="pt-10">
 
-          Please feel free to join the Open Data Day Google Group and get
+          Please feel free to join the <a target="_blank" href="https://groups.google.com/forum/#!forum/open-data-day">Open Data Day Google Group</a> and get
           connected with others.
 
         <div class="font-bold w-full flex flex-col justify-center pt-10 pb-10">
           <img class="drop-shadow-xl  rounded-[30px]" src="{{ .Site.BaseURL}}images/sweden.png">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             ODD event in Sweden
           </span>
         </div>
@@ -680,7 +686,7 @@ and Data Literacy</h2>
         <div class="font-bold w-full flex flex-col justify-center pt-10 pb-10">
           <img class="drop-shadow-xl  rounded-[30px]" src="{{ .Site.BaseURL}}images/bolivia.png">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             ODD event in Bolivia
           </span>
         </div>
@@ -688,7 +694,7 @@ and Data Literacy</h2>
         <div class="font-bold w-full flex flex-col justify-center pt-10 pb-10">
           <img class="drop-shadow-xl  rounded-[30px]" src="{{ .Site.BaseURL}}images/brazil.png">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             ODD event in Brazil
           </span>
         </div>
@@ -696,7 +702,7 @@ and Data Literacy</h2>
         <div class="font-bold w-full flex flex-col justify-center pt-10 pb-10">
           <img class="drop-shadow-xl  rounded-[30px]" src="{{ .Site.BaseURL}}images/tanzania-2.jpg">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             ODD event in Tanzania
           </span>
         </div>
@@ -704,7 +710,7 @@ and Data Literacy</h2>
         <div class="font-bold w-full flex flex-col justify-center pt-10 pb-10">
           <img class="drop-shadow-xl  rounded-[30px]" src="{{ .Site.BaseURL}}images/liberia.jpeg">
           <br/>
-          <span class="pt-5 max-w-[500px] m-auto text-center">
+          <span class="pt-4 max-w-[500px] m-auto text-center">
             ODD event in Liberia
           </span>
         </div>
@@ -740,7 +746,7 @@ and Data Literacy</h2>
       </div>
 
       <div class="grid gap-4 md:grid-cols-2 pt-10">
-        <div class="bg-blog py-[43px] px-[32px]">
+        <div class="bg-blog hover:bg-blog-h py-[43px] px-[32px]">
           <a class="text-black" target="_blank" href="https://blog.okfn.org/2022/11/28/better-together-than-alone-open-knowledge-network/">
           <b class="font-bold text-2xl">
             Better together than alone: say hello again to the Open Knowledge Network
@@ -758,7 +764,7 @@ and Data Literacy</h2>
           </a>
         </div>
 
-        <div class="bg-blog py-[43px] px-[32px]">
+        <div class="bg-blog  hover:bg-blog-h py-[43px] px-[32px]">
           <a class="text-black" target="_blank" href="https://blog.okfn.org/2022/10/21/nine-recommendations-for-civil-servants-to-enhance-national-digital-transformations/">
           <b class="font-bold text-2xl">
             Recommendations to enhance national digital transformations
@@ -775,7 +781,7 @@ and Data Literacy</h2>
           </a>
         </div>
 
-        <div class="bg-blog py-[43px] px-[32px]">
+        <div class="bg-blog  hover:bg-blog-h py-[43px] px-[32px]">
           <a class="text-black" target="_blank" href="https://blog.okfn.org/2022/10/05/csvconfv7-is-going-to-buenos-aires/">
           <b class="font-bold text-2xl">
             csv,conf,v7 is going to Buenos Aires!
@@ -793,7 +799,7 @@ and Data Literacy</h2>
           </a>
         </div>
 
-        <div class="bg-blog py-[43px] px-[32px]">
+        <div class="bg-blog  hover:bg-blog-h py-[43px] px-[32px]">
           <a class="text-black" target="_blank" href="https://blog.okfn.org/2022/07/05/frictionless-planet-and-lacuna-fund-discuss-gaps-in-climate-datasets-for-machine-learning/">
           <b class="font-bold text-2xl">
             Frictionless Planet and Lacuna Fund discuss gaps in climate datasets for machine learning
@@ -809,7 +815,7 @@ and Data Literacy</h2>
         </div>
 
 
-        <div class="bg-blog py-[43px] px-[32px]">
+        <div class="bg-blog  hover:bg-blog-h py-[43px] px-[32px]">
           <a class="text-black" target="_blank" href="https://blog.okfn.org/2022/08/26/using-open-data-to-ensure-the-sustainability-of-the-ocean/">
           <b class="font-bold text-2xl">
             Using open data to ensure the sustainability of the Ocean
@@ -827,7 +833,7 @@ and Data Literacy</h2>
           </a>
         </div>
 
-        <div class="bg-blog py-[43px] px-[32px]">
+        <div class="bg-blog  hover:bg-blog-h py-[43px] px-[32px]">
           <a class="text-black" target="_blank" href="https://blog.okfn.org/2022/03/03/an-urgent-call-for-peace-and-solidarity/">
           <b class="font-bold text-2xl">
             An urgent call for peace and solidarity
@@ -850,7 +856,7 @@ and Data Literacy</h2>
       </div>
 
 
-      <div class="flex justify-center pt-[60px] max-w-[390px] text-center m-auto">
+      <div class="flex justify-center pt-[200px] max-w-[390px] text-center m-auto">
         <h2> <b class="font-bold">Welcome OKF's new</b> team members</h2>
       </div>
 
@@ -900,7 +906,7 @@ and Data Literacy</h2>
 
       </div>
 
-      <div class="flex justify-center pt-[60px] max-w-[390px] text-center m-auto pb-10">
+      <div class="flex justify-center pt-[200px] max-w-[390px] text-center m-auto pb-10">
         <h2> <b class="font-bold">How to get</b> involved</h2>
       </div>
 

@@ -919,6 +919,9 @@ p {
 .z-\[100\] {
   z-index: 100;
 }
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
 .col-span-5 {
   grid-column: span 5 / span 5;
 }
@@ -948,10 +951,6 @@ p {
 }
 .m-auto {
   margin: auto;
-}
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 .mx-5 {
   margin-left: 1.25rem;
@@ -1089,9 +1088,6 @@ p {
 .max-w-\[307px\] {
   max-width: 307px;
 }
-.max-w-\[630px\] {
-  max-width: 630px;
-}
 .max-w-\[70\%\] {
   max-width: 70%;
 }
@@ -1115,6 +1111,9 @@ p {
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1146,6 +1145,12 @@ p {
 .gap-x-8 {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
+}
+.gap-y-2\.5 {
+  row-gap: 0.625rem;
+}
+.gap-y-2 {
+  row-gap: 0.5rem;
 }
 .self-center {
   align-self: center;
@@ -1846,6 +1851,13 @@ footer  a {
   font-weight: bold;
 }
 
+footer  a:hover {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
 .filter-selector{
   border-radius: 30px;
   border-width: 3px;
@@ -1939,10 +1951,6 @@ button.project.open {
     position: fixed;
   }
 
-  .md\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
   .md\:col-span-3 {
     grid-column: span 3 / span 3;
   }
@@ -1951,12 +1959,32 @@ button.project.open {
     grid-column: span 1 / span 1;
   }
 
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .md\:col-span-5 {
     grid-column: span 5 / span 5;
   }
 
+  .md\:col-start-1 {
+    grid-column-start: 1;
+  }
+
+  .md\:col-start-5 {
+    grid-column-start: 5;
+  }
+
   .md\:col-start-2 {
     grid-column-start: 2;
+  }
+
+  .md\:col-end-7 {
+    grid-column-end: 7;
+  }
+
+  .md\:col-end-4 {
+    grid-column-end: 4;
   }
 
   .md\:col-end-5 {
@@ -2014,10 +2042,6 @@ button.project.open {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .md\:grid-cols-5 {

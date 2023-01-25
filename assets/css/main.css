@@ -414,6 +414,13 @@ footer  a {
   font-weight: bold;
 }
 
+footer  a:hover {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
 .filter-selector{
   border-radius: 30px;
   border-width: 3px;

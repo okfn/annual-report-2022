@@ -1080,14 +1080,11 @@ p {
 .min-w-\[900px\] {
   min-width: 900px;
 }
-.max-w-\[500px\] {
-  max-width: 500px;
+.max-w-\[95\%\] {
+  max-width: 95%;
 }
 .max-w-\[300px\] {
   max-width: 300px;
-}
-.max-w-\[95\%\] {
-  max-width: 95%;
 }
 .max-w-\[220px\] {
   max-width: 220px;
@@ -1097,6 +1094,9 @@ p {
 }
 .max-w-\[200px\] {
   max-width: 200px;
+}
+.max-w-\[500px\] {
+  max-width: 500px;
 }
 .max-w-\[505px\] {
   max-width: 505px;
@@ -1991,8 +1991,16 @@ button.project.open {
     width: 20%;
   }
 
+  .md\:max-w-\[500px\] {
+    max-width: 500px;
+  }
+
   .md\:max-w-\[640px\] {
     max-width: 640px;
+  }
+
+  .md\:max-w-\[220px\] {
+    max-width: 220px;
   }
 
   .md\:grid-cols-2 {
@@ -2009,6 +2017,10 @@ button.project.open {
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:pl-10 {

@@ -874,11 +874,6 @@ h6,.heading-6 {
   line-height: 1.625;
   text-transform: uppercase;
 }
-.lead {
-  font-size: 1.25rem;
-  line-height: 1.625;
-  font-weight: 400;
-}
 p {
   line-height: 1.625;
   font-weight: 300;
@@ -1084,6 +1079,9 @@ p {
 }
 .min-w-\[900px\] {
   min-width: 900px;
+}
+.max-w-\[475px\] {
+  max-width: 475px;
 }
 .max-w-\[300px\] {
   max-width: 300px;
@@ -1463,9 +1461,6 @@ p {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-
-@import "fonts.css";
-
 @font-face {
     font-family: 'DM Sans';
     src: url(../fonts/DMSans-Regular.woff) format('woff'),
@@ -1473,7 +1468,6 @@ p {
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Miriam Libre';
     src: url(../fonts/MiriamLibre-Regular.woff) format('woff'),
@@ -1481,29 +1475,24 @@ p {
     font-weight: normal;
     font-style: normal;
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
 }
-
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'HKGroteskRegular', sans-serif;
     background: #fff url("../images/blurred_dots.svg");
     background-repeat: no-repeat;
     background-position: top right;
     background-size: 30%;
     align-items: center;
 }
-
 a {
   color: rgba(0, 169, 224, 1);
 }
-
 a:hover {
   color: #00D1FF;
 }
-
 body.project-body {
     background: #fff url("../images/project-background.svg");
     font-family: 'DM Sans', sans-serif;
@@ -1513,33 +1502,28 @@ body.project-body {
     align-items: center;
     position: relative;
 }
-
 .page-content {
     background: url("../images/blurred_dots_bottom.svg");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 30%;
 }
-
 .project-content {
     background: url("../images/project-background-bottom.svg");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 30%;
 }
-
 .specialist-content {
     background: url("../images/blurred_dots_bottom.png");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 30%;
 }
-
 .wrapper{
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .send-button {
   background-image: url('../images/add-project-button.svg');
   background-repeat: no-repeat;
@@ -1547,7 +1531,6 @@ body.project-body {
   min-height: 90px;
   width: 160px;
 }
-
 .specialist-send-button {
   background-image: url('../images/specialist-button.svg');
   background-repeat: no-repeat;
@@ -1555,7 +1538,6 @@ body.project-body {
   min-height: 90px;
   width: 160px;
 }
-
 /*Header*/
 .header-container{
     background: #fff url("../images/blurred_dots.png");
@@ -1566,31 +1548,25 @@ body.project-body {
     display: flex;
     align-items: center;
 }
-
 header{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 h1, h2{
     font-family: 'Miriam Libre', serif; 
 }
-
 h1 {
   line-height: 1.25em;
 }
-
 #title-divider {
     margin: 45px 0px 25px;
     border: 2px solid black;
     border-radius: 2px;
 }
-
 .highlight-specialist {
     box-shadow: inset 0 -38px 0 #FF80DB, inset 0 -1px 0 black
 }
-
 .highlight-project {
     box-shadow: inset 0 -38px 0 #AEFFEC, inset 0 -1px 0 black
 }
@@ -1600,7 +1576,6 @@ label {
     font-size: 24px;
     font-weight: bold;
 }
-
 input[type=text] {
     background-color: #FFDFF6;
     padding: 12px 5px;
@@ -1608,27 +1583,22 @@ input[type=text] {
     box-sizing: border-box;
     border: none;
     color: #4b4b4b;
-} 
-
+}
 .form-project input[type=text] {
     background-color: #AEFFEC;
 }
-
 #specialist-info {
   transition: all 0.3s;
 }
-
 #info-dialog {
   transition: all 0.3s;
 	opacity: 0;
   transform: scale(0);
 }
-
 #info-dialog.show-dialog {
   opacity: 1;
   transform: scale(1);
 }
-
 option {
     background-color: #FFDFF6;
     width: 60%;
@@ -1637,31 +1607,24 @@ option {
     box-sizing: border-box;
     border: none;
     color: #4b4b4b;
-} 
-
-
+}
 input::-moz-placeholder {
   color: black;
   opacity: 0.7;
-} 
-
-
+}
 input::placeholder {
   color: black;
   opacity: 0.7;
 }
-
 .field_hr {
     background-color: #FF80DB; 
     margin-bottom: 20px;
     opacity: 1;
     height: 4px;
 }
-
 .form-project .field_hr {
     background-color: #AEFFEC; 
 }
-
 textarea {
     background-color: #FFDFF6;
     padding: 15px 20px;
@@ -1673,51 +1636,40 @@ textarea {
 textarea:focus-visible, input:focus-visible{
   outline: none !important;
 }
-
 .form-project textarea {
     background-color: #AEFFEC;
 }
-
 .form-control{
   border: 3px solid #AEFFEC;
   padding-left: 20px;
 }
-
 .form-control-specialist{
   border: 3px solid #FF80DB;
   padding-left: 20px;
 }
-
 input[type="text"]{
   padding: 15px 20px;
 }
-
 textarea::-moz-placeholder {
   color: black;
   opacity: 0.7;
 }
-
 textarea::placeholder {
   color: black;
   opacity: 0.7;
 }
-
 .project-banner {
   background-color: #FF80DB;
 }
-
 .projects-list-banner {
   background-color: #00D1FF;
 }
-
 .specialist-banner {
   background-color: #AEFFEC;
 }
-
 .add-project-action {
   border-color: black;
 }
-
 .add-project-button {
   background: rgba(255, 255, 255, 0) url('../images/add-project-button.svg');
   background-repeat: no-repeat;
@@ -1726,36 +1678,29 @@ textarea::placeholder {
   min-width: 120px;
   width: 100%;
 }
-
 .add-project-button:hover{
   cursor: pointer;
 }
-
 .add-project-button > div {
   max-width: 200px;
 }
-
 .project-card {
   background-color: #AEFFEC;
   border-radius: 0 90px 0 90px;
 }
-
 .project-logo {
   position: relative;
   justify-content: center;
   filter: saturate(0%);
 }
-
 .project-card:hover .project-logo{
   filter: saturate(100%);
   transition: all 0.35s linear;
   cursor: pointer;
 }
-
 .project-card:hover #project-name {
   text-decoration: underline;
 }
-  
 .project-logo:after {
   content: "";
   position: absolute;
@@ -1765,21 +1710,17 @@ textarea::placeholder {
   width: 50%;
   border-bottom: 3px solid #FF80DB;
 }
-
 mark.project {
     background-color: rgba(0,0,0,0);
     box-shadow: inset 0 -38px 0  #AEFFEC, inset 0 -1px 0 black;
 }
-
 mark.specialist {
     background-color: rgba(0,0,0,0);
     box-shadow: inset 0 -38px 0 #FF80DB, inset 0 -1px 0 black;
 }
-
 .bg-specialist{
   background-color: #FF80DB;
 }
-
 .add-specialist-button{
   background: rgba(255, 255, 255, 0) url('../images/specialist-button.svg');
   background-repeat: no-repeat;
@@ -1788,19 +1729,15 @@ mark.specialist {
   min-width: 120px;
   width: 100%;
 }
-
 .add-specialist-button:hover{
   cursor: pointer;
 }
-
 .add-specialist-button > div {
   max-width: 200px;
 }
-
 .specialist-card {
   background-color: #D5F4FB;
 }
-
 .specialist-pic {   
   height: 160px;
   background-repeat: no-repeat;
@@ -1809,23 +1746,18 @@ mark.specialist {
   background-color: #00D1FF;
   transition: all 0.35s linear;
 }
-
 .specialist-card:hover .specialist-pic{
   background-color: transparent;
 }
-
 .specialist-card:hover #specialist-name{
 text-decoration: underline;
 }
-
 .specialist-card:hover{
   cursor: pointer;
 }
-
 .logo{
   max-height: 4.8em;
 }
-
 @media only screen and (max-width: 600px){
   .center-mobile{
     display: flex;
@@ -1847,136 +1779,109 @@ text-decoration: underline;
   }
 
 }
-
 .filter-selector {
   transition: all 0.3s;
 }
-
 .filter-selector.visible {
   transition: all 0.3s ease-in-out;
   transform: scaleY(1);
   transform-origin: left top;
 
 }
-
 .filter-selector.collapse {
   transition: all 0.3s ease-in-out;
   transform-origin: left top;
   transform: scaleY(0);
 }
-
 .filter-button {
   transition: all 0.3s ease-in-out;
 }
-
 footer {
   background-color: #00d1ff;
   color: black;
 }
-
 footer > div > hr {
   background-color: white;
   opacity: 1;
   border-size: 2px;
 }
-
 footer > div.license > p {
   padding-top: 15px;
 }
-
 footer  a {
   color: black;
   font-weight: bold;
 }
-
 footer  a:hover {
   color: black;
   text-decoration: underline;
   font-weight: bold;
 }
-
-
 .filter-selector{
   border-radius: 30px;
   border-width: 3px;
   border-color: #AEFFEC;
 }
-
 .checkbox-label{
   font-family: 'DM Sans';
   cursor: pointer;
 }
-
 .checkmark {
   margin-right: 10px;
   height: 20px;
   width: 20px;
   accent-color: #AEFFEC;
 }
-
 .specialist-checkbox-label{
   font-family: 'DM Sans';
   cursor: pointer;
 }
-
 .specialist-checkmark{
   margin-right: 10px;
   height: 20px;
   width: 20px;
   accent-color: #FF80DB;
 }
-
 .specialist-filter-selector{
   border-radius: 30px;
   border-width: 3px;
   border-color: #FF80DB;
 }
-
 button.specialist.open {
   border-color: #FF80DB;
 }
-
 button.project.open {
   border-color: #AEFFEC;
 }
-
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
-
 .hover\:bg-blog-h:hover {
   background-color: rgba(228, 255, 54, 1);
 }
-
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(238 238 238 / var(--tw-bg-opacity));
 }
-
 .hover\:bg-aeroblue-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(174 255 236 / var(--tw-bg-opacity));
 }
-
 .hover\:bg-lightpink-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 128 219 / var(--tw-bg-opacity));
 }
-
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-
 .hover\:text-gray-800:hover {
   --tw-text-opacity: 1;
   color: rgb(66 66 74 / var(--tw-text-opacity));
 }
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
-
 @media (min-width: 540px) {
 
   .sm\:w-full {
@@ -1987,7 +1892,6 @@ button.project.open {
     text-align: center;
   }
 }
-
 @media (min-width: 720px) {
 
   .md\:fixed {

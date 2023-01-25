@@ -477,12 +477,6 @@ video {
   height: 0px;
   transition: all .35s ease;
 }
-.bg-yellow {
-  background-color: #ffeb3b;
-}
-.bg-yellow.bg-gradient {
-  background-image: linear-gradient(195deg, #ffee58, #fdd835);
-}
 .button {
   padding: 0.625rem 1.5rem;
   border-radius: 0.5rem;
@@ -913,11 +907,26 @@ p {
 .right-0 {
   right: 0px;
 }
+.left-\[-600px\] {
+  left: -600px;
+}
+.top-\[-200px\] {
+  top: -200px;
+}
+.left-\[100px\] {
+  left: 100px;
+}
+.top-\[-550px\] {
+  top: -550px;
+}
 .left-\[-400px\] {
   left: -400px;
 }
-.top-\[-300px\] {
-  top: -300px;
+.top-\[-650px\] {
+  top: -650px;
+}
+.bottom-\[400px\] {
+  bottom: 400px;
 }
 .bottom-0 {
   bottom: 0px;
@@ -1248,6 +1257,15 @@ p {
 }
 .bg-yellow-blob {
   background-image: url('/images/yellow-bg.png');
+}
+.bg-light-blue-blob {
+  background-image: url('/images/light-blue-blob.png');
+}
+.bg-blue-blob {
+  background-image: url('/images/blue-bg.png');
+}
+.bg-purple-blob {
+  background-image: url('/images/purple-bg.png');
 }
 .bg-bottom {
   background-image: url('/images/background-bottom.png');

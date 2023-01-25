@@ -27,7 +27,10 @@ module.exports = withMT({
       backgroundImage: {
         'header-top': "url('/images/okf-report-2022-top-bg.png')",
         'bottom': "url('/images/background-bottom.png')",
-        'yellow-blob': "url('/images/yellow-bg.png')"
+        'yellow-blob': "url('/images/yellow-bg.png')",
+        'blue-blob': "url('/images/blue-bg.png')",
+        'light-blue-blob': "url('/images/light-blue-blob.png')",
+        'purple-blob': "url('/images/purple-bg.png')"
       }
     },
     fontFamily: {

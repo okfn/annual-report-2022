@@ -1464,6 +1464,8 @@ p {
   transition-duration: 150ms;
 }
 
+@import "fonts.css";
+
 @font-face {
     font-family: 'DM Sans';
     src: url(../fonts/DMSans-Regular.woff) format('woff'),
